@@ -53,3 +53,6 @@ dkms.conf
 
 # Compiled applications
 build/
+
+# Unneeded scripts that are there to make life easier but would just be messy
+run.sh
