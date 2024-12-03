@@ -1,5 +1,4 @@
 #include <stddef.h>
-#include "raylib.h"
 #include "global.h"
 #include "screens/title.h"
 #include "screens/game.h"
@@ -12,13 +11,15 @@ int main ()
 
 	// Create the window
 	InitWindow(1280, 800, "Chaos");
-	
-	// Enter the title screen
+	SetExitKey(KEY_P);
+	Font defaultFont = LoadFontEx("fonts/arial.ttf", 96, 0, 0);
+
+	// Start the main game loop and enter the title screen
 	enum Screen curr_screen = TITLE;
 	while (!WindowShouldClose()) {
 		switch (curr_screen) {
 			case TITLE:
-				curr_screen = title_screen();
+				curr_screen = title_screen(defaultFont);
 				break;
 			case GAME:
 				curr_screen = game_screen();

@@ -8,8 +8,8 @@ ubuntu : build/chaos
 
 windows : build/chaos.exe
 
-build/chaos : chaos.c
+build/chaos : chaos.c global.h screens/title.h screens/game.h screens/options.h
 	gcc chaos.c $(ubuntu-args) -o build/chaos
 
-build/chaos.exe : chaos.c
+build/chaos.exe : chaos.c global.h screens/title.h screens/game.h screens/options.h
 	x86_64-w64-mingw32-gcc chaos.c $(win-args) -o build/chaos.exe

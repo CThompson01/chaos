@@ -1,4 +1,3 @@
-#include "raylib.h"
 #include "../global.h"
 
 int options_render() {
@@ -24,9 +23,10 @@ enum Screen options_screen() {
 		EndDrawing();
 		
 		// Update
-
-		// Take user input
-		
+		if (IsKeyPressed(KEY_ESCAPE)) {
+			next_screen = TITLE;
+			break;
+		}
 	}
 	
 	return next_screen;
